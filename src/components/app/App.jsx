@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Description from '../description/description';
 import Feedback from '../feedback/feedback';
 import Notification from '../notification/notfication';
 import Options from '../options/options';
@@ -24,12 +25,11 @@ export default function App() {
 
   const resetFeedback = () => {
     setFeedback({ good: 0, neutral: 0, bad: 0 });
-  };
+  }
 
   return (
     <div>
-      <h1>Sip Happens Café</h1>
-      <p>Please leave your feedback about our service by selecting one of the options below.</p>
+      <Description />
       <Options updateFeedback={updateFeedback} resetFeedback={resetFeedback} feedback={feedback} />
       {totalFeedback > 0 ? (
         <Feedback 
